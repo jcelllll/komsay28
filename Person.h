@@ -4,65 +4,34 @@ using namespace std;
 
 class Person{
 	private:
-		int age;
+		string fname;
+		string lname;
 		char gender;
 	public:
 		Person(){}
 		
-		Person(int newage){
-			age = newage;
-			gender = 'M';
-		}
-		Person(int newage, char c){
-			age = newage;
-			gender = c;
+		Person(string newfname, string newlname, char newGender ){
+			fname = newfname;
+			lname = newlname;
+			gender = newGender;
 		}
 		
-void setage(int newage){
-	if( newage >= 0){
-		age = newage;	
+	void setfname(string newfname){
+		fname = newfname;	
 	}
-	else{
-		cout << "invalid age!!!" << endl;
-	}
-}
-int getage(){
-		return age;
+	string getfname(){
+		return fname;
 	}	
-void setgender(char c){
-	if( (c == 'M') || (c == 'F') ){
-		gender = c;
-
-	} 
-	else{
-		cout << "invalid gender!!!" << endl;
+	void setlname(string newlname){
+		lname = newlname; 
 	}
-}
-char getgender(){
-	return gender;
-}
-string whatGen(int age){
-	if(age <= 123 && age >= 97){
-		return "Greatest Generation";
+	string getlname(){
+		return lname;
 	}
-	else if(age <= 96 && age >= 79){
-		return "Silent Generation";
+	void setgender(char newGender){
+		gender = newGender; 
 	}
-	else if(age <= 78 && age >= 60){
-		return "Boomers";
+	char getgender(){
+		return gender;
 	}
-	else if(age <= 59 && age >= 44){
-		return "Generation X";
-	}
-	else if(age <= 43 && age >= 28){
-		return "Millenials";
-	}
-	else if(age <= 27 && age >= 14){
-		return "Gen Z";
-	}
-	else if(age <= 13 && age >= 0){
-		return "Generation Alpha";
-	}
-}
-
 };
